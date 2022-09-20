@@ -15,7 +15,7 @@
   </div>
   <script type="text/javascript"> 
 
-    var say = '';     
+   var say = '';     
 
       ThunkableWebviewerExtension.receiveMessage(function(message) {  
 
@@ -26,7 +26,6 @@
       answer(); // 然後回答使用者的問題。
 
     });
-
 
   
 /* 以下為本程式回答問題時使用的 Q&A 規則，例如對於以下 Q&A 規則物件
@@ -106,7 +105,7 @@ var qaList = [
     }
 
     function answer() { // 回答問題
-                var r =getAnswer();
+         var r =getAnswer();
 
       setTimeout(function () { // 停頓 1 到 3 秒再回答問題 (因為若回答太快就不像人了，人打字需要時間)
 
@@ -115,12 +114,10 @@ var qaList = [
       }, 1000+random(2000));
 
           ThunkableWebviewerExtension.postMessage(r);
-		  
-    }
     
     function getAnswer() {
       //var say = document.getElementById("say").value; // 取得使用者輸入的問句。
-	  //document.getElementById("say").value = "";
+     //document.getElementById("say").value = "";
       for (var i in qaList) { // 對於每一個 QA 
        try {
         var qa = qaList[i];
