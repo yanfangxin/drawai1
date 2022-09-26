@@ -13,18 +13,18 @@
     <div id="dialogBox" style="width:95%; height:80%; overflow:auto; border:ridge 1px #888888; ">
         >> 您好，我的朋友! 有心事嗎 ?<BR />
     </div>
+    var say = '';
+
+    ThunkableWebviewerExtension.receiveMessage(function(message) {
+
+    say = message     ;
+
+    append(say); // 先將使用者輸入的問句放到「對話區」顯示。
+
+    answer(); // 然後回答使用者的問題。
+
+    });
     <script type="text/javascript">
-        var say = '';
-
-        ThunkableWebviewerExtension.receiveMessage(function (message) {
-
-            say = message;
-
-            append(say); // 先將使用者輸入的問句放到「對話區」顯示。
-
-            answer(); // 然後回答使用者的問題。
-
-        });
         /* 以下為本程式回答問題時使用的 Q&A 規則，例如對於以下 Q&A 規則物件
 
          { Q:"想 | 希望", A:"為何想*呢?|真的想*?|那就去做阿?為何不呢?"},
